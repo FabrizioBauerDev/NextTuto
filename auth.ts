@@ -39,10 +39,7 @@ export const { auth, signIn, signOut } = NextAuth({
         console.log('Invalid credentials');
         return null;
       },
+
     }),
   ],
-  // Configuración dinámica de URLs
-  ...(process.env.NODE_ENV === 'production' && {
-    url: process.env.NEXTAUTH_URL || process.env.VERCEL_URL,
-  }),
 });
